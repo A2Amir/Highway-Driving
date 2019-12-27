@@ -58,5 +58,6 @@ In order to build and compile the code, from within the main repository director
 If you decide to work in your local setup, you can download the latest simulator [here](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) and then  double-click the "Simulator" icon in that desktop to start the simulator.
 
 
+<p align="right"> <img src="./img/1.gif" style="right;"  width="500" height="400"> </p> 
 
 
