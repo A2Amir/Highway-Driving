@@ -47,7 +47,7 @@ If you think about the over all flow of data in a self-driving car operating on 
 
 
 
-## 2.	Build and compile the code
+## 3.	Build and compile the code
 
 In order to build and compile the code, from within the main repository directory, you can:
 
@@ -56,6 +56,7 @@ In order to build and compile the code, from within the main repository director
 * ./path_planning to run your code
 
 If you decide to work in your local setup, you can download the latest simulator [here](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) and then  double-click the "Simulator" icon in that desktop to start the simulator.
+
 
 
 
