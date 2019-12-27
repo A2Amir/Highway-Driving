@@ -2,7 +2,7 @@
  The goal of this project is to build a path planner that creates smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. 
  
  
-# Project instructions:
+# 1. Project instructions:
 * The car transmits **its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road**.
 
 * The path planner outputs a list of x and y global map coordinates. Each pair of x and y coordinates is a point, and all of the points to gether form a trajectory. You can use any number of points that you want, but the x list should be the same length as the y list. The car moves from point to point every 20 ms perfectly and the car's new rotation becomes the line between the previous waypoint and the car's new location.
@@ -21,3 +21,19 @@
 The highway has 6 lanes total - 3 heading in each direction. Each lane is 4 m wide and the car should only ever be in one of the 3 lanes on the right-hand side. The car should always be inside a lane unless doing a lane change.
 
 * The sensor_fusion variable contains all the information about the cars on the right-hand side of the road. The data format for each car is: [ id, x, y, vx, vy, s, d]. The id is a unique identifier for that car. The x, y values are in global map coordinates, and the vx, vy values are the velocity components, also in reference to the global map. Finally s and d are the Frenet coordinates for that car. The vx, vy values can be useful for predicting where the cars will be in the future. For instance, if you were to assume that the tracked car kept moving along the road, then its future predicted Frenet s value will be its current s value plus its (transformed) total velocity (m/s) multiplied by the time elapsed into the future (s).
+
+
+The architecture can be schematically represented as follows.
+
+
+## 2.	Code Overview
+If you think about the over all flow of data in a self-driving car operating on the fastest time scales you have: 
+
+1.	First [Motion](https://github.com/A2Amir/Motion-Model-of-a-Car) Control
+2.	Than  you have [Sensor Fusion](https://github.com/A2Amir/Extended-Kalman-Filter-for-Sensor-Fusion-Radar-and-Lidar).
+3.	Just lower than you have [localization](https://github.com/A2Amir/Implement-a-particle-filter-in-the-context-of-Cplus) and trajectory planning.
+4.	Next is [Prediction](https://github.com/A2Amir/Prediction-Phase-in-the-trajectory-generation-of-cars) which you just learned about.
+5.	And then at the top is behavior planning with the lowest update rate.
+
+<p align="right"> <img src="./img/1.png" style="right;" alt=" the fastest time scales" width="400" height="300"> </p> 
+
