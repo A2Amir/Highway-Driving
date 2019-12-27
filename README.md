@@ -32,7 +32,7 @@ If you think about the over all flow of data in a self-driving car operating on 
 1.	First [Motion](https://github.com/A2Amir/Motion-Model-of-a-Car) Control
 2.	Than  you have [Sensor Fusion](https://github.com/A2Amir/Extended-Kalman-Filter-for-Sensor-Fusion-Radar-and-Lidar).
 3.	Just lower than you have [localization](https://github.com/A2Amir/Implement-a-particle-filter-in-the-context-of-Cplus) and trajectory planning.
-4.	Next is [Prediction](https://github.com/A2Amir/Prediction-Phase-in-the-trajectory-generation-of-cars) which you just learned about.
+4.	Next is [Prediction](https://github.com/A2Amir/Prediction-Phase-in-the-trajectory-generation-of-cars) which you can learne about.
 5.	And then at the top is [behavior planning](https://github.com/A2Amir/Behavior-Planning-by-Finite-State-Machine) with the lowest update rate.
 
 <p align="right"> <img src="./img/1.png" style="right;" alt=" the fastest time scales" width="400" height="300"> </p> 
