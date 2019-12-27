@@ -2,7 +2,7 @@
  The goal of this project is to build a path planner that creates smooth, safe trajectories for the car to follow. The highway track has other vehicles, all going different speeds, but approximately obeying the 50 MPH speed limit. 
  
  
-# 1. Project instructions:
+## 1. Project instructions:
 * The car transmits **its location, along with its sensor fusion data, which estimates the location of all the vehicles on the same side of the road**.
 
 * The path planner outputs a list of x and y global map coordinates. Each pair of x and y coordinates is a point, and all of the points to gether form a trajectory. You can use any number of points that you want, but the x list should be the same length as the y list. The car moves from point to point every 20 ms perfectly and the car's new rotation becomes the line between the previous waypoint and the car's new location.
@@ -39,8 +39,23 @@ If you think about the over all flow of data in a self-driving car operating on 
 
 * The file [src/main.cpp](https://github.com/A2Amir/Highway-Driving/blob/master/src/main.cpp) contains the code to communicate with the simulator and also code that reads configuration files, such as highway map and configuration file containing various settings for the path planner.
 
-* The Prediction Layer is defined in [src/prediction.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/prediction.h)file and is responsible for predicting the surrounding cars positions at some time in the future.
+* The Prediction Layer is defined in [src/prediction.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/prediction.h) file and is responsible for predicting the surrounding cars positions at some time in the future.
 
 * The Behavior Layer is defined in [src/behavior.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/behavoir.h) file and it responsible for "higher-level thinking" of the car.
 
 * The Trajectory Layer is defined in [src/trajectory.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/trajectory.h) file and is responsible for generating a jerk-minimizing trajectory between the current Car object and the Car object planned by the Behavior Layer and for collision avoidance.
+
+
+
+## 2.	Build and compile the code
+
+In order to build and compile the code, from within the main repository directory, you can:
+
+* mkdir build && cd build to create and enter the build directory
+* cmake .. && make to compile your project
+* ./path_planning to run your code
+
+If you decide to work in your local setup, you can download the latest simulator [here](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) and then  double-click the "Simulator" icon in that desktop to start the simulator.
+
+
+
