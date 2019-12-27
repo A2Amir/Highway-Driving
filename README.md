@@ -37,3 +37,10 @@ If you think about the over all flow of data in a self-driving car operating on 
 
 <p align="right"> <img src="./img/1.png" style="right;" alt=" the fastest time scales" width="400" height="300"> </p> 
 
+* The file [src/main.cpp](https://github.com/A2Amir/Highway-Driving/blob/master/src/main.cpp) contains the code to communicate with the simulator and also code that reads configuration files, such as highway map and configuration file containing various settings for the path planner.
+
+* The Prediction Layer is defined in [src/prediction.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/prediction.h)file and is responsible for predicting the surrounding cars positions at some time in the future.
+
+* The Behavior Layer is defined in [src/behavior.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/behavoir.h) file and it responsible for "higher-level thinking" of the car.
+
+* The Trajectory Layer is defined in [src/trajectory.h](https://github.com/A2Amir/Highway-Driving/blob/master/src/trajectory.h) file and is responsible for generating a jerk-minimizing trajectory between the current Car object and the Car object planned by the Behavior Layer and for collision avoidance.
