@@ -53,7 +53,7 @@ In order to build and compile the code, from within the main repository director
 
 * mkdir build && cd build to create and enter the build directory
 * cmake .. && make to compile your project
-* ./path_planning to run your code
+* ./path_planning to run the code.
 
 If you decide to work in your local setup, you can download the latest simulator [here](https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2) and then  double-click the "Simulator" icon in that desktop to start the simulator.
 
