@@ -99,11 +99,11 @@ int main() {
                         car_s = end_path_s;
                       vector<double> predictions= get_predictions(sensor_fusion, prev_size, car_s, lane);
                       // Behaviour planning
-                      bool car_left = predictions[0];
-                      bool car_right = predictions[1];
-                      bool car_front = predictions[2];
+                      bool car_left = (bool)predictions[0];
+                      bool car_right =(bool) predictions[1];
+                      bool car_front =(bool) predictions[2];
                       double front_speed = predictions[3];
-                      std::cout<< "current state: " <<lane << "   " << ref_vel << std::endl;
+                      std::cout<< "current stcate: " <<lane << "   " << ref_vel << std::endl;
                       std::cout<< "predictions: " << "car_left:" << car_left<< ", car_right: "<< car_right<<  ", car_front:" <<car_front <<std::endl;
                       std::vector<std::pair<int, double>> successors = behaviour_planning(car_left, car_right, car_front, lane, ref_vel, front_speed);
                       // choose the least cost trajectory

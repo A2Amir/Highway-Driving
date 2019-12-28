@@ -11,15 +11,14 @@
 // for convenience
 using std::string;
 using std::vector;
-// for convenience
-using std::string;
-using std::vector;
 
 
-vector<double> get_predictions(vector<vector<double>> sensor_fusion, int prev_size, double car_s, int lane){
-  bool car_left = false;
-  bool car_front = false;
-  bool car_right = false;
+
+vector<double> get_predictions(vector<vector<double>> sensor_fusion, int prev_size, double car_s, int lane)
+{
+  double car_left = 0;
+  double car_front = 0;
+  double car_right = 0;
   double front_speed;
   for(int i = 0; i < sensor_fusion.size(); i++){
     double check_car_s = sensor_fusion[i][5];
@@ -34,19 +33,21 @@ vector<double> get_predictions(vector<vector<double>> sensor_fusion, int prev_si
       check_car_s = check_car_s + prev_size * 0.02 * check_car_speed;
       if(check_car_lane == lane){
         if((check_car_s > car_s) && (check_car_s < car_s + 30)){
-          car_front = true;
+          car_front = 1;
           front_speed = check_car_speed; // m/s
         }
+        
       } else {
-        if((check_car_lane == lane - 1) && (check_car_s > car_s && (check_car_s - car_s) < 40 ||  check_car_s < car_s && (car_s - check_car_s ) < 30)|| lane == 0)
-          car_left = true;
-        if((check_car_lane == lane + 1) && (check_car_s > car_s && (check_car_s - car_s) < 40 ||  check_car_s < car_s && (car_s - check_car_s ) < 30)|| lane == 2)
-          car_right = true;
+        if((check_car_lane == lane - 1) && (((check_car_s > car_s) && (check_car_s - car_s)) <(40 ||  (check_car_s < car_s) && (car_s - check_car_s ) < 30))|| lane == 0)
+          car_left = 1;
+        if((check_car_lane == lane + 1) && (((check_car_s > car_s) && (check_car_s - car_s)) < (40 ||  (check_car_s < car_s) && (car_s - check_car_s ) < 30))|| lane == 2)
+          car_right = 1;
       }
     }
   }
-
-  return {car_left, car_right, car_front, front_speed};
+  vector<double> pred {car_left, car_right, car_front, front_speed};
+  
+  return pred;
 }
 
-#endif  // HELPERS_H
+#endif  // HELPERS_Hcd
